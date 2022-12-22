@@ -10,4 +10,14 @@ npx hardhat test
 REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
+npx hardhat run scripts/upgrade.js
+```
+To interact with the smart contracts
+
+```shell
+npx hardhat console
+ > const BoxV3 = await ethers.getContractFactory("BoxV3")
+ > const boxV3 = await BoxV3.attach("0xB217049e47914f421F0C649E6f056cF004C5F5a7")
+ > (await boxV3.retrieve()).toString()
+ > (await boxV3.increment())
 ```
